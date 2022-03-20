@@ -1,0 +1,17 @@
+/* * {
+    background: url('../img/workspace-background.png');
+}
+ */
+
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+.App {
+    display: flex;
+}
