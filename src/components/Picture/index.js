@@ -49,7 +49,7 @@ function Picture({ left, right, pictureId, pictureItem, url, setBoard, setIcons 
                     if (setBoard) {
                         setBoard(prev => {
                             // add icon after collison to the board
-                            const newBoard = [...prev, { ...iconLibrary[idAfterCrash], toado, pictureId: uuidv4()}];
+                            const newBoard = [...prev, { ...iconLibrary[idAfterCrash], toado, pictureId: uuidv4() }];
                             // remove `drag icon` and remove `drop icon`
                             const newBoardAfter = newBoard.filter(icon => icon.pictureId !== dragPictureId && icon.pictureId !== pictureId);
                             return newBoardAfter;
@@ -58,7 +58,7 @@ function Picture({ left, right, pictureId, pictureItem, url, setBoard, setIcons 
                     if (setIcons) {
                         setIcons(prev => [...prev, iconLibrary[idAfterCrash].title])
                     }
-                } else { 
+                } else {
                     // if collison not occur
                     // will move drag icon to new toado
                     if (setBoard) {
@@ -79,6 +79,7 @@ function Picture({ left, right, pictureId, pictureItem, url, setBoard, setIcons 
             }
         }
     }));
+
     return (
         <div ref={drop}>
             <img
