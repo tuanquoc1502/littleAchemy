@@ -31,7 +31,7 @@ function Picture({ left, right, pictureId, pictureItem, url, setBoard, setIcons 
     const [{ }, dragSourceRef] = useDrag(() => ({
         type: 'images',
         item: { left, right, dragPictureItem: pictureItem, dragPictureId: pictureId },
-    }));
+    }), [pictureId]);
 
     const [{ }, drop] = useDrop(() => ({
         accept: 'images',
@@ -78,7 +78,7 @@ function Picture({ left, right, pictureId, pictureItem, url, setBoard, setIcons 
                 }
             }
         }
-    }));
+    }), [pictureId]);
 
     return (
         <div ref={drop}>
